@@ -83,6 +83,7 @@ Now you can glue the base in place with some super glue. Give it some time to dr
 This was my first Arduino-ish project (besides blinky LED) and I have next to no experience with C/C++. This means, that my code most likely horrible and full of flaws, since I was dealing more with figuring out the basics instead of perfectly planning out the project itself. So feedback is welcome and even though I don't plan to support the project, the occasional pull request might be merged.
 
 Following libraries and all their dependencies are needed:
+
 Library | Source
 ---------- | ----------
 GxEPD | https://github.com/ZinggJM/GxEPD
