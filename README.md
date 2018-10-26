@@ -1,6 +1,7 @@
 
 # ESP8266 based wifi room thermometer and weatherstation
 
+![title](https://raw.githubusercontent.com/g0r3/esp8266-thermometer/master/title.png)
 
 A room thermometer which uses a DHT22 sensor for measuring the room temperature and fetches weather data via Openweathermap. Its features:
 * 4.2 inch epaper display
