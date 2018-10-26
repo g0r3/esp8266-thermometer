@@ -10,9 +10,11 @@ A room thermometer which uses a DHT22 sensor for measuring the room temperature 
 * Web interface with JSON output to use the measurements via the network
 
 **Setup**
+
 When started the first time, the thermometer creates an access point 'AutoConnectAP'. Connect to it, pick you network (only 2.4G), enter its credentials. Afterwards it reboots and should show the device IP address in the line on the bottom (DHCP is compulsory). Browse to it and you will bring you to the page to enter your Openweathermap API key (create an account: https://openweathermap.org/) and location.
 
 **Usage**
+
 All the relevant data is shown on the display itself. Just pick a nice place for the thermometer. Since Openweathermap does not provide a proper min/max-Temp functionality, it only shows the min/max values for the next 24 hours starting from the current time. Apart from reading them of the display you can get all the measurement data by opening the page http://yourthermometerip/measurements and use it remotely:
 
 `{
@@ -33,6 +35,7 @@ All the relevant data is shown on the display itself. Just pick a nice place for
  In my case I am logging the temperature and humidity using a homeassistant server.
 
 **Parts list**
+
 1. a NodeMCU dev board. Not exactly necessary needed, but it already contains a voltage regulator, which makes things easier. And I've designed the case around it.
 2. a Waveshare 4.2 inch E-paper module (https://www.waveshare.com/wiki/4.2inch_e-Paper_Module)
 3. a DHT22. There is a successor using I2C. But I had the DHT22 laying around. So the DHT22 it is...
@@ -40,6 +43,7 @@ All the relevant data is shown on the display itself. Just pick a nice place for
 5. if you use my Case: four 2 to 2.5 mm diameter screws to fixate the NodeMCU board in the base of the case. 
 
 **Build process**
+
 The build process is rather selfexplanatory. If you go with my case and my hardware suggestion, there are two things you have to do as a preparation:
 1. Desolder the plug from the display, as it is too tall for the case. We use the solder holes in the module on the other side. You can cut off the wires and reuse them.
 2. Desolder the pin headers from the NodeMCU module.
@@ -75,11 +79,12 @@ Data | D1
 Now you can glue the base in place with some super glue. Give it some time to dry, before you fixate the NodeMCU in the base using the screws. Check, that the Micro USB port aligns nicely with the hole. After placing the tap on the base (the use of sandpaper might be advisable) the assembly process is done.
 
 **The project/code**
+
 This was my first Arduino-ish project (besides blinky LED) and I have next to no experience with C/C++. This means, that my code most likely horrible and full of flaws, since I was dealing more with figuring out the basics instead of perfectly planning out the project itself. So feedback is welcome and even though I don't plan to support the project, the occasional pull request might be merged.
 
 Following libraries and all their dependencies are needed:
 Library | Source
----------- | ---------
+---------- | ----------
 GxEPD | https://github.com/ZinggJM/GxEPD
 ArduinoJson | https://github.com/bblanchon/ArduinoJson or Arduino Library manager (use 5.x not 6.x)
 Adafruit DHT Sensor Library | https://github.com/adafruit/DHT-sensor-library or Arduino Library manager
@@ -108,6 +113,7 @@ Hardware:
 * Add buttons for soft reset, light, display refresh and "factory" reset
 
 **Credits**
+
 The design of the configuration page was blatantly stolen from Wifi manager.
 
 Weather icons: 
