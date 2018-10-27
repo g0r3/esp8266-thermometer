@@ -46,7 +46,7 @@ void setup() {
   EEPROM.begin(city_len + countrycode_len + apikey_len);
   setup_display(update_display_clock);
   WiFiManager wifiManager;
-  wifiManager.setTimeout(60);
+  wifiManager.setTimeout(300);
 
   if(!wifiManager.autoConnect("AutoConnectAP", "diesistdaspasswort")) {
     Serial.println("failed to connect and hit timeout");
