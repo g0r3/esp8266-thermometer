@@ -42,11 +42,19 @@ WiFiServer server(80);
 void setup() {
   write_header("setup()");
   Serial.begin(115200);
+  WiFi.hostname("ESP8266-Weatherstation");
   EEPROM.begin(city_len + countrycode_len + apikey_len);
   setup_display(update_display_clock);
   WiFiManager wifiManager;
-  WiFi.hostname("ESP8266-Weatherstation");
-  wifiManager.autoConnect("AutoConnectAP");
+  wifiManager.setTimeout(60);
+
+  if(!wifiManager.autoConnect("AutoConnectAP", "diesistdaspasswort")) {
+    Serial.println("failed to connect and hit timeout");
+    delay(3000);
+    //reset and try again, or maybe put it to deep sleep
+    ESP.restart();
+  } 
+
   Serial.println("Connected.");
   ipaddress = WiFi.localIP().toString(); 
   read_config_from_storage();
