@@ -75,6 +75,9 @@ DHT22 | ESP8266
 3.3v | 3.3V
 GND | GND
 Data | D1
+** If your ESP doesn't reboot after connecting the display, the D8 pin might be responsible. If this is is the case, add a 2.2k pulldown resistor from D8 to GND and you should be good
+
+
 
 Now you can glue the base in place with some super glue. Give it some time to dry, before you fixate the NodeMCU in the base using the screws. Check, that the Micro USB port aligns nicely with the hole. After placing the tap on the base (the use of sandpaper might be advisable) the assembly process is done.
 
